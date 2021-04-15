@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.itheamc.parlaymanager.ui.HomeFragment"
+        android:label="Parlay Bet's Manager"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_selectionsFragment"
+            app:destination="@id/selectionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectionsFragment"
+        android:name="com.itheamc.parlaymanager.ui.SelectionsFragment"
+        android:label="Selections"
+        tools:layout="@layout/fragment_selections">
+        <action
+            android:id="@+id/action_selectionsFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_selectionsFragment_to_ticketsFragment"
+            app:destination="@id/ticketsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.itheamc.parlaymanager.ui.AddFragment"
+        android:label="Add Legs"
+        tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/ticketsFragment"
+        android:name="com.itheamc.parlaymanager.ui.TicketsFragment"
+        android:label="Tickets"
+        tools:layout="@layout/fragment_tickets" />
+</navigation>

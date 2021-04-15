@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "893732505906",
+    "project_id": "parlay-bet-manager",
+    "storage_bucket": "parlay-bet-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893732505906:android:e943913c3256d9ccc92f2b",
+        "android_client_info": {
+          "package_name": "com.itheamc.parlaymanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893732505906-mnp5dmiq0tos0ivl04r9g1epe0bi378b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmf1XuEgCFleyC2nefIc7gJAcbRQvNkTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893732505906-mnp5dmiq0tos0ivl04r9g1epe0bi378b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

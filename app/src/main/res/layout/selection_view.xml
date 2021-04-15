@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="selection"
+            type="com.itheamc.parlaymanager.models.Selection" />
+
+        <variable
+            name="trueodds"
+            type="Double" />
+
+        <variable
+            name="earning"
+            type="Double" />
+
+        <variable
+            name="profit"
+            type="Double" />
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/selectionMotionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        app:layoutDescription="@xml/selectionmotionlayout_scene">
+
+        <LinearLayout
+            android:id="@+id/headerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/linear_layout_selection_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+
+                <TextView
+                    android:id="@+id/compo_sn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bubblegum_sans"
+                    android:text="@{String.format(`#%d  %s  ( $%s )`, selection.id, selection.title, String.valueOf(selection.bet_amount))}"
+                    android:textColor="#EFEFEF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="#1  Favourite" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/option_menu"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/option_menu_for_selections"
+                    app:srcCompat="@drawable/menu" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/true_odds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/bubblegum_sans"
+                    android:text="@{String.format(`True Odds: %s`, String.valueOf(trueodds))}"
+                    android:textColor="#EFEFEF"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="True Odds: 8.75" />
+
+                <TextView
+                    android:id="@+id/total_earning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/bubblegum_sans"
+                    android:text="@{String.format(`Earning: $%s`, String.valueOf(earning))}"
+                    android:textColor="#EFEFEF"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="Total Earning: $875" />
+
+                <TextView
+                    android:id="@+id/combined_profit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/bubblegum_sans"
+                    android:text="@{String.format(`Profit: $%s`, String.valueOf(profit))}"
+                    android:textColor="#EFEFEF"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="Profit: $775" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/purple_200"
+            app:layout_constraintBottom_toTopOf="@id/recycler_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerContainer" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="leg"
+            type="com.itheamc.parlaymanager.models.Leg" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="earning"
+            type="Double" />
+
+        <variable
+            name="profit"
+            type="Double" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/legConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:cardBackgroundColor="@color/color_dark"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.motion.widget.MotionLayout
+                android:id="@+id/legMotionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutDescription="@xml/legmotionlayout_scene">
+
+                <LinearLayout
+                    android:id="@+id/mainContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/sno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/bubblegum_sans"
+                        android:text="@{String.format(`#%d`, position)}"
+                        android:textColor="@color/text_color"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/legTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/bubblegum_sans"
+                        android:text="@{leg._name}"
+                        android:textColor="@color/text_color"
+                        android:textSize="12sp"
+                        tools:text="ANC" />
+
+                    <TextView
+                        android:id="@+id/americanOdds"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/bubblegum_sans"
+                        android:text="@{String.format(`MoneyLine: %s`, leg._american_odds)}"
+                        android:textColor="@color/text_color"
+                        android:textSize="12sp"
+                        tools:text="MoneyLine: -150" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#4DFFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/mainContainer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/collapseContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mainContainer">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/decimalOddsLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/baumans"
+                            android:text="@string/decimal_odds"
+                            android:textColor="@color/purple_200"
+                            android:textSize="12sp"
+                            android:textStyle="bold|italic" />
+
+                        <TextView
+                            android:id="@+id/fractionalOddsLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/baumans"
+                            android:text="@string/fractional_odds"
+                            android:textColor="@color/purple_200"
+                            android:textSize="12sp"
+                            android:textStyle="bold|italic" />
+
+                        <TextView
+                            android:id="@+id/winChanceLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/baumans"
+                            android:text="@string/win_chance"
+                            android:textColor="@color/purple_200"
+                            android:textSize="12sp"
+                            android:textStyle="bold|italic" />
+
+                        <TextView
+                            android:id="@+id/totalEarningLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/baumans"
+                            android:text="@string/total_earning"
+                            android:textColor="@color/purple_200"
+                            android:textSize="12sp"
+                            android:textStyle="bold|italic" />
+
+                        <TextView
+                            android:id="@+id/profitLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="12dp"
+                            android:fontFamily="@font/baumans"
+                            android:text="@string/profit"
+                            android:textColor="@color/purple_200"
+                            android:textSize="12sp"
+                            android:textStyle="bold|italic" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/decimalOdds"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/baumans"
+                            android:text="@{String.valueOf(leg._decimal_odds)}"
+                            android:textColor="@color/purple_200"
+                            android:textSize="12sp"
+                            tools:text="2.5" />
+
+                        <TextView
+                            android:id="@+id/fractionalOdds"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/baumans"
+                            android:text="@{leg._fractional_odds}"
+                            android:textColor="@color/purple_200"
+                            android:textSize="12sp"
+                            tools:text="5/2" />
+
+                        <TextView
+                            android:id="@+id/winChance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/baumans"
+                            android:text="@{String.format(`%s%s`, String.valueOf(leg._win_chance), `%`)}"
+                            android:textColor="@color/purple_200"
+                            android:textSize="12sp"
+                            tools:text="49%" />
+
+                        <TextView
+                            android:id="@+id/totalEarning"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/baumans"
+                            android:text="@{String.format(`$%s`, String.valueOf(earning))}"
+                            android:textColor="@color/purple_200"
+                            android:textSize="12sp"
+                            tools:text="$1200" />
+
+                        <TextView
+                            android:id="@+id/finalProfit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="12dp"
+                            android:fontFamily="@font/baumans"
+                            android:text="@{String.format(`$%s`, String.valueOf(profit))}"
+                            android:textColor="@color/purple_200"
+                            android:textSize="12sp"
+                            tools:text="$1000" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.motion.widget.MotionLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

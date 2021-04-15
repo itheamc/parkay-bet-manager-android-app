@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Parlay Bet Manager</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="decimal_odds">Decimal Odds</string>
+    <string name="fractional_odds">Fractional Odds</string>
+    <string name="win_chance">Win Chance</string>
+    <string name="total_earning">Total Earning</string>
+    <string name="profit">Profit</string>
+    <string name="option_menu_for_selections">Option menu for selection view</string>
+    <string name="delete">Delete</string>
+    <string name="tickets">Parlay Tickets</string>
+    <string name="add">Add Leg</string>
+    <string name="option_menu_for_ticket">Option menu for ticket view</string>
+    <string name="add_selection">Add Selection</string>
+    <string name="add_parlay_legs">Add parlay legs in your selection list</string>
+    <string name="selection_s_name">Your Selection\'s Title</string>
+    <string name="leg_title">Leg\'s Title</string>
+    <string name="american_odds">American Odds</string>
+    <string name="wager_amount">Wager Amount</string>
+    <string name="leg_s_title">Leg\'s Title</string>
+    <string name="americal_odds">American Odds</string>
+    <string name="add_now">Add Now</string>
+    <string name="selection_name">Selection\'s Name</string>
+    <string name="update">Update</string>
+    <string name="edit_wager">Edit Wager</string>
+    <string name="update_wager">Change Wager</string>
+    <string name="ok">OK</string>
+    <string name="select_size_of_ticket">Please select the number of legs included in each ticket.</string>
+    <string name="notes_for_create_ticket">Note: Wager amount will be equally divided among the tickets.</string>
+    <string name="add_new_leg_to_your_selection">Add new leg to your selection</string>
+    <string name="let_s_start">Let\'s Start</string>
+    <string name="welcome_to_parlay_bet_manager">Welcome \nto \nParlay Bet Manager</string>
+    <string name="do_you_want_to_manage">Do you want to win big by easily managing your parlay bets?</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+
+    <!--  ADS  -->
+    <string name="banner_ad_unit_id">ca-app-pub-2718777519784278/4635175934</string>
+    <string name="banner_ad_test_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-2718777519784278/4443604241</string>
+    <string name="interstitial_test_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+</resources>
