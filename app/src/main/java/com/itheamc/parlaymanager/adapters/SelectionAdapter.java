@@ -1,6 +1,5 @@
 package com.itheamc.parlaymanager.adapters;
 
-import android.app.Application;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.itheamc.parlaymanager.BuildConfig;
 import com.itheamc.parlaymanager.R;
 import com.itheamc.parlaymanager.callbacks.ItemsClickListener;
 import com.itheamc.parlaymanager.databinding.SelectionViewBinding;
@@ -89,7 +87,7 @@ public class SelectionAdapter extends ListAdapter<Selection, SelectionAdapter.Se
             PopupMenu popupMenu = new PopupMenu(v.getContext(), v);
             popupMenu.setOnMenuItemClickListener(this);
             popupMenu.inflate(R.menu.selection_menu);
-            if (BuildConfig.VERSION_CODE >= Build.VERSION_CODES.Q) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 popupMenu.setForceShowIcon(true);
             }
             popupMenu.show();
