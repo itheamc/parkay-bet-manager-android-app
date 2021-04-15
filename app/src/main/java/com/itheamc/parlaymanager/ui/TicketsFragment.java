@@ -81,6 +81,7 @@ public class TicketsFragment extends Fragment implements ItemsClickListener {
         AdView mAdView = ticketsBinding.adView;
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        requestInterstitialAds(adRequest);
     }
 
 
