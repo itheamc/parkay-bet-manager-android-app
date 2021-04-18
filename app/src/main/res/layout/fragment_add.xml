@@ -46,19 +46,19 @@
             android:inputType="textPersonName"
             android:paddingStart="24dp"
             android:paddingLeft="24dp"
-            android:paddingTop="6dp"
+            android:paddingTop="8dp"
             android:paddingEnd="24dp"
             android:paddingRight="24dp"
-            android:paddingBottom="6dp"
+            android:paddingBottom="8dp"
             android:textAlignment="center"
             android:textColor="@color/text_color"
-            android:textColorHint="#80FBA342"
+            android:textColorHint="#80FFFFFF"
             android:textSize="12sp" />
 
         <EditText
             android:id="@+id/input_wager_amount"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="48dp"
             android:layout_marginTop="4dp"
             android:layout_marginRight="48dp"
@@ -70,13 +70,13 @@
             android:inputType="numberDecimal"
             android:paddingStart="12dp"
             android:paddingLeft="24dp"
-            android:paddingTop="6dp"
+            android:paddingTop="8dp"
             android:paddingEnd="12dp"
             android:paddingRight="24dp"
-            android:paddingBottom="6dp"
+            android:paddingBottom="8dp"
             android:textAlignment="center"
             android:textColor="@color/text_color"
-            android:textColorHint="#80FBA342"
+            android:textColorHint="#80FFFFFF"
             android:textSize="12sp" />
 
 
@@ -102,13 +102,13 @@
                 android:inputType="textPersonName"
                 android:paddingStart="12dp"
                 android:paddingLeft="24dp"
-                android:paddingTop="6dp"
+                android:paddingTop="8dp"
                 android:paddingEnd="12dp"
                 android:paddingRight="24dp"
-                android:paddingBottom="6dp"
+                android:paddingBottom="8dp"
                 android:textAlignment="center"
                 android:textColor="@color/text_color"
-                android:textColorHint="#80FBA342"
+                android:textColorHint="#80FFFFFF"
                 android:textSize="12sp" />
 
 
@@ -127,13 +127,13 @@
                 android:inputType="phone"
                 android:paddingStart="12dp"
                 android:paddingLeft="24dp"
-                android:paddingTop="6dp"
+                android:paddingTop="8dp"
                 android:paddingEnd="12dp"
                 android:paddingRight="24dp"
-                android:paddingBottom="6dp"
+                android:paddingBottom="8dp"
                 android:textAlignment="center"
                 android:textColor="@color/text_color"
-                android:textColorHint="#80FBA342"
+                android:textColorHint="#80FFFFFF"
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -142,14 +142,15 @@
             android:id="@+id/addButton"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:fontFamily="@font/bubblegum_sans"
             android:paddingLeft="48dp"
             android:paddingRight="48dp"
             android:text="@string/add"
-            android:textColor="@color/text_color"
+            android:textColor="@color/purple_200"
             android:textSize="12sp"
-            app:cornerRadius="16dp" />
+            app:cornerRadius="16dp"
+            app:strokeColor="@color/purple_200" />
 
     </LinearLayout>
 
