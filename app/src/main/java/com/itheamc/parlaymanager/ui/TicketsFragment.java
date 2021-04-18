@@ -108,7 +108,7 @@ public class TicketsFragment extends Fragment implements ItemsClickListener {
     }
 
     @Override
-    public void onSwipe(int position) {
+    public void onSwipe(int selectionPosition, int legPosition) {
 
     }
 

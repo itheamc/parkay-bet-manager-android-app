@@ -10,5 +10,5 @@ public interface ItemsClickListener {
     void onMenuClick(int position, int type);
 
     /*_________Item Swipe______________*/
-    void onSwipe(int position);
+    void onSwipe(int selectionPosition, int legPosition);
 }
