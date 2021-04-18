@@ -1,6 +1,7 @@
 package com.itheamc.parlaymanager.viewmodel;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParlayViewModel extends AndroidViewModel {
+    private static final String TAG = "ParlayViewModel";
     private final LiveData<List<Leg>> legsList;
     private final LegsRepository legsRepository;
     private List<Selection> selectionList;
@@ -45,9 +47,14 @@ public class ParlayViewModel extends AndroidViewModel {
     }
 
 
-    // Function to delete the legs
+    // Function to delete the leg
     public void deleteLeg(Leg leg) {
         legsRepository.deleteLeg(leg);
+    }
+
+    // Function to delete the leg by id
+    public void deleteLegById(int id) {
+        legsRepository.deleteLegById(id);
     }
 
     // Function to update wager of the legs
@@ -61,6 +68,8 @@ public class ParlayViewModel extends AndroidViewModel {
     }
 
     public void setSelectionList(List<Selection> selectionList) {
+        Log.d(TAG, "setSelectionList: Added");
+        this.selectionList = new ArrayList<>();
         this.selectionList = selectionList;
     }
 

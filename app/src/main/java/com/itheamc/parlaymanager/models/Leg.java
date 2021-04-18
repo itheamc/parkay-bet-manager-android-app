@@ -172,7 +172,7 @@ public class Leg {
                     newItem.get_bet_amount() == oldItem.get_bet_amount() &&
                     newItem.get_american_odds() == oldItem.get_american_odds() &&
                     newItem.get_decimal_odds() == oldItem.get_decimal_odds() &&
-                    newItem.get_win_chance() == oldItem.get_win_chance();
+                    newItem.get_win_chance() == 100.0;
         }
     };
 }

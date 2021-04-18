@@ -70,4 +70,14 @@ public class LegsRepository {
             }
         });
     }
+
+    // Function to delete leg by id
+    public void deleteLegById(int id) {
+        LegsDatabase.executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                legDao.deleteLegById(id);
+            }
+        });
+    }
 }

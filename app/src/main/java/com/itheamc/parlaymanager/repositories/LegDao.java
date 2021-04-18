@@ -29,4 +29,7 @@ public interface LegDao {
 
     @Query("UPDATE leg SET bet_amount=:wager WHERE _id = :id")
     void updateWager(double wager, int id);
+
+    @Query("DELETE FROM leg WHERE _id = :id")
+    void deleteLegById(int id);
 }
