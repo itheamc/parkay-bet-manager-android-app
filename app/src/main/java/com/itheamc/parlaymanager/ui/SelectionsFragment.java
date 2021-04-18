@@ -24,6 +24,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.material.snackbar.Snackbar;
 import com.itheamc.parlaymanager.R;
 import com.itheamc.parlaymanager.adapters.SelectionAdapter;
 import com.itheamc.parlaymanager.callbacks.CombinationCallback;
@@ -194,9 +195,27 @@ public class SelectionsFragment extends Fragment implements ItemsClickListener, 
     }
 
     @Override
-    public void onSwipe(int position) {
-
+    public void onSwipe(int selectionPosition, int legPosition) {
+        Selection selection = viewModel.getSelectionList().get(selectionPosition);
+        Leg leg = selection.getLegs().get(legPosition);
+        viewModel.deleteLegById(leg.get_id());
+        Snackbar.make(selectionsBinding.addSelection, String.format("%s (%s) removed successfully", leg.get_name(), String.valueOf(leg.get_bet_amount())), Snackbar.LENGTH_LONG)
+        .setAnchorView(selectionsBinding.addSelection)
+        .setAction("Undo", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewModel.insertLeg(new Leg(
+                        leg.get_name(),
+                        leg.get_bet_amount(),
+                        leg.get_american_odds(),
+                        leg.get_selection_name()
+                ));
+                NotifyUtils.showToast(getContext(), String.format("%s (%s) re-added successfully", leg.get_name(), String.valueOf(leg.get_bet_amount())));
+            }
+        })
+        .show();
     }
+
 
 
     // Function to show popup dialog to select the items size in ticket

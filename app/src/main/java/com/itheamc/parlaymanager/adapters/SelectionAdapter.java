@@ -55,7 +55,7 @@ public class SelectionAdapter extends ListAdapter<Selection, SelectionAdapter.Se
     public static class SelectionViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
         private final SelectionViewBinding selectionViewBinding;
         private final ItemsClickListener clickListener;
-        private LegsAdapter legsAdapter;
+        private final LegsAdapter legsAdapter;
 
         public SelectionViewHolder(@NonNull SelectionViewBinding viewBinding, ItemsClickListener clickListener) {
             super(viewBinding.getRoot());
@@ -73,7 +73,7 @@ public class SelectionAdapter extends ListAdapter<Selection, SelectionAdapter.Se
 
                 @Override
                 public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-
+                    clickListener.onSwipe(getAdapterPosition(), viewHolder.getAdapterPosition());
                 }
             };
 
