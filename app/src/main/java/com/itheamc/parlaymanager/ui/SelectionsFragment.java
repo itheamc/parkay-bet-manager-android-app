@@ -183,7 +183,6 @@ public class SelectionsFragment extends Fragment implements ItemsClickListener, 
     public void onMenuClick(int position, int type) {
         Selection selection = viewModel.getSelectionList().get(position);
         if (type == CREATE_TICKETS) {
-
             if (getContext() != null && NetworkUtil.isConnected(getContext())) {
                 showTicketSizePopUp(selection);
             } else {
