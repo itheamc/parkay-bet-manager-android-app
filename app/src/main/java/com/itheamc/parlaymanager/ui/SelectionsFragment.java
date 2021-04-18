@@ -38,6 +38,7 @@ import com.itheamc.parlaymanager.models.Selection;
 import com.itheamc.parlaymanager.models.Ticket;
 import com.itheamc.parlaymanager.utils.CombinationUtils;
 import com.itheamc.parlaymanager.utils.MathUtils;
+import com.itheamc.parlaymanager.utils.NetworkUtil;
 import com.itheamc.parlaymanager.utils.NotifyUtils;
 import com.itheamc.parlaymanager.viewmodel.ParlayViewModel;
 
@@ -182,7 +183,12 @@ public class SelectionsFragment extends Fragment implements ItemsClickListener, 
     public void onMenuClick(int position, int type) {
         Selection selection = viewModel.getSelectionList().get(position);
         if (type == CREATE_TICKETS) {
-            showTicketSizePopUp(selection);
+
+            if (getContext() != null && NetworkUtil.isConnected(getContext())) {
+                showTicketSizePopUp(selection);
+            } else {
+                NotifyUtils.showToast(getContext(), "No Network Connection");
+            }
         } else if (type == ADD_LEG_IN_SELECTION) {
             showAddLegPopUp(selection);
         } else if (type == EDIT_SELECTION_WAGER) {
